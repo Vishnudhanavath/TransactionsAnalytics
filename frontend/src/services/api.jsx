@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api/v1";
+const API_BASE_URL = "https://transactionsanalytics-1.onrender.com/api/v1";
 
 
 export const fetchTransactions = async (month = "", search = "", page = 1, perPage = 10) => {
     try {
         console.log("API Request:", { month, search, page, perPage });
-        const response = await axios.get("http://localhost:5000/api/v1/transactions", { 
+        const response = await axios.get("https://transactionsanalytics-1.onrender.com/api/v1/transactions", { 
             params: { month, search, page, perPage } 
         });
 
