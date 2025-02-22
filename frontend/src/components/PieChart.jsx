@@ -42,9 +42,9 @@ const PieChartComponent = ({ month }) => {
     if (!pieChartData.length) return <p className="error-message">No category data available for {month}</p>;
 
     return (
-        <div className="pie-chart-container" style={{ width: "100%", maxWidth: "400px", margin: "auto" }}>
+        <div className="pie-chart-container" style={{ width: "100%", maxWidth: "1000px", margin: "auto" }}>
             <h2 className="pie-chart-title">Category Distribution for {month}</h2>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={480}>
                 <PieChart>
                     <Pie
                         data={pieChartData}
