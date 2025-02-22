@@ -2,11 +2,9 @@ import axios from "axios";
 
 const API_BASE_URL = "https://transactionsanalytics-1.onrender.com/api/v1";
 
-
 export const fetchTransactions = async (month = "", search = "", page = 1, perPage = 10) => {
     try {
-        console.log("API Request:", { month, search, page, perPage });
-        const response = await axios.get("https://transactionsanalytics-1.onrender.com/api/v1/transactions", { 
+        const response = await axios.get(`${API_BASE_URL}/transactions`, { 
             params: { month, search, page, perPage } 
         });
 
@@ -20,8 +18,10 @@ export const fetchTransactions = async (month = "", search = "", page = 1, perPa
         return { transactions: [], totalPages: 1 };
     }
 };
+
 export const fetchStatistics = (month) => {
     return axios.get(`${API_BASE_URL}/statistics`, { params: { month } });
+    
 };
 
 export const fetchBarChart = (month) => {

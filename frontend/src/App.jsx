@@ -13,7 +13,7 @@ const App = () => {
               <Navbar />
                 <Routes>
                     <Route path="/" element={<Navigate to="/dashboard" />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
+                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/transactions" element={<TransactionsTable month="March" />} />
                     <Route path="*" element={<h2>404 - Page Not Found</h2>} />
                 </Routes>

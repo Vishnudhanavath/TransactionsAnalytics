@@ -24,11 +24,11 @@ const TransactionsTable = () => {
     useEffect(() => {
         const fetchFilteredTransactions = async () => {
             try {
-                console.log("Fetching transactions for:", { month, debouncedSearch, page });
+                // console.log("Fetching transactions for:", { month, debouncedSearch, page });
     
                 const response = await fetchTransactions(month, debouncedSearch, page);
                 
-                console.log("Full API Response:", response);
+                // console.log("Full API Response:", response);
                 if (Array.isArray(response.transactions)) {
                     setTransactions(response.transactions);
                     setTotalPages(response.totalPages || 1);

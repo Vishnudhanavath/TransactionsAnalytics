@@ -183,12 +183,10 @@ export const getPieChartData = async (req, res) => {
     try {
         console.log(`Fetching Pie Chart Data for month: ${month} (Index: ${monthIndex})`);
 
-        // Log all transactions to check if data is present
         const debugTransactions = await Transaction.find({
             $expr: { $eq: [{ $month: "$dateOfSale" }, monthIndex] }
         }, { title: 1, category: 1, dateOfSale: 1 });
 
-        // console.log("Matched Transactions:", debugTransactions); // Debugging log
 
         const categoryData = await Transaction.aggregate([
             { 
@@ -204,7 +202,6 @@ export const getPieChartData = async (req, res) => {
             }
         ]);
 
-        // console.log("Generated Pie Chart Data:", categoryData); // Debugging log
 
         res.json(categoryData);
     } catch (error) {
